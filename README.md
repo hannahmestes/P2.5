@@ -33,11 +33,20 @@ Escape Room game for CS3365
 ![alt text](https://github.com/hannahmestes/EscapeRoom/blob/master/useKeyDiagram.png?raw=true "Use Item")
 
 
+### Room Blueprint
+
+![alt text](https://github.com/hannahmestes/EscapeRoom/blob/master/Blueprint.png?raw=true "Blueprint")
+
+
+### Current State of Room
+![alt text](https://github.com/hannahmestes/EscapeRoom/blob/master/Morgue.png?raw=true "Blueprint")
+
+
 ## Current Progress
 * Teleportation and grabbing items actions are working
 * Morgue setting working
 * Teleportation zones added
-* Key assets needed identified
+* Identified needed assets
 
 ## Plan going forward
 * Finish designing puzzles
