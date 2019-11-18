@@ -23,3 +23,16 @@ Escape Room game for CS3365
 
 ![alt text](https://github.com/hannahmestes/EscapeRoom/blob/master/useKeyDiagram.png?raw=true "Use Item")
 
+
+## Current Progress
+* Teleportation and grabbing items actions are working
+* Morgue setting working
+* Teleportation zones added
+* Key assets needed identified
+
+## Plan going forward
+* Finish designing puzzles
+* Implement puzzles
+* Add sound and other details
+* Add menu screen
+* User testing
