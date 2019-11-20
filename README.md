@@ -5,11 +5,11 @@ Escape Room game for CS3365
 
 |         | Team Member | Responsibilities  |
 |:---:|:---:|:---:|
-| ![Picture](https://i.imgur.com/CH8zog6.jpg) | Hannah Estes | TBD |
-|  ![Picture](https://i.imgur.com/jGlkQcz.jpg) | Hriddhi Kulkarni | TBD |
-| ![Picture](https://i.imgur.com/vBoP71w.jpg)| Tasnia Heya | TBD |
-| ![Picture](https://i.imgur.com/Hjeut15.jpg) | Jeffrey Lance | TBD |
-| ![Picture](https://i.imgur.com/gXLSGLL.jpg) | Katrina Bueno | TBD | 
+| ![Picture](https://i.imgur.com/CH8zog6.jpg) | Hannah Estes | Antidote interactions and VR mechanics |
+|  ![Picture](https://i.imgur.com/jGlkQcz.jpg) | Hriddhi Kulkarni | Key and lock interactions |
+| ![Picture](https://i.imgur.com/vBoP71w.jpg)| Tasnia Heya | Key pad interactions |
+| ![Picture](https://i.imgur.com/Hjeut15.jpg) | Jeffrey Lance | Narrative and music |
+| ![Picture](https://i.imgur.com/gXLSGLL.jpg) | Katrina Bueno | Timer and main menu | 
 
 ## Sketches
 
