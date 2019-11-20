@@ -12642,7 +12642,7 @@ PrefabInstance:
     - target: {fileID: 114175256907313876, guid: 9623e1c09606a01498f200718f0f607d,
         type: 3}
       propertyPath: ValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114175256907313876, guid: 9623e1c09606a01498f200718f0f607d,
         type: 3}
@@ -12697,6 +12697,31 @@ PrefabInstance:
     - target: {fileID: 114175256907313876, guid: 9623e1c09606a01498f200718f0f607d,
         type: 3}
       propertyPath: ValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114175256907313876, guid: 9623e1c09606a01498f200718f0f607d,
+        type: 3}
+      propertyPath: ValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114175256907313876, guid: 9623e1c09606a01498f200718f0f607d,
+        type: 3}
+      propertyPath: ValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114175256907313876, guid: 9623e1c09606a01498f200718f0f607d,
+        type: 3}
+      propertyPath: ValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1974725566}
+    - target: {fileID: 114175256907313876, guid: 9623e1c09606a01498f200718f0f607d,
+        type: 3}
+      propertyPath: ValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Receive
+      objectReference: {fileID: 0}
+    - target: {fileID: 114175256907313876, guid: 9623e1c09606a01498f200718f0f607d,
+        type: 3}
+      propertyPath: ValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 114008397680483090, guid: 9623e1c09606a01498f200718f0f607d,
