@@ -15,7 +15,7 @@ TagManager:
   - 
   - Teleportable
   - KeyLayer
-  - 
+  - ReflectIgnore
   - 
   - 
   - 
