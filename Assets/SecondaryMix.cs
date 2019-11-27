@@ -45,27 +45,27 @@ public class SecondaryMix : MonoBehaviour
         }
         else if(LiquidParent.transform.localScale.y<=1){
             if(other.GetComponent<Renderer>().material.name.Contains(blueMat.name) && currentMat == 2){
-                ChangeMaterial(purpleMat);
+                StartCoroutine("ChangeColor", purpleMat);
                 StartCoroutine("FillFull");
             }
             if(other.GetComponent<Renderer>().material.name.Contains(blueMat.name) && currentMat == 3){
-                ChangeMaterial(greenMat);
+                StartCoroutine("ChangeColor", greenMat);
                 StartCoroutine("FillFull");
             }
             if(other.GetComponent<Renderer>().material.name.Contains(redMat.name)&& currentMat == 1){
-                ChangeMaterial(purpleMat);
+                StartCoroutine("ChangeColor", purpleMat);
                 StartCoroutine("FillFull");
             }
             if(other.GetComponent<Renderer>().material.name.Contains(redMat.name)&& currentMat == 3){
-                ChangeMaterial(orangeMat);
+                StartCoroutine("ChangeColor", orangeMat);
                 StartCoroutine("FillFull");
             }
             if(other.GetComponent<Renderer>().material.name.Contains(yellowMat.name)&& currentMat == 2){
-                ChangeMaterial(orangeMat);
+                StartCoroutine("ChangeColor", orangeMat);
                 StartCoroutine("FillFull");
             }
             if(other.GetComponent<Renderer>().material.name.Contains(yellowMat.name)&& currentMat == 1){
-                ChangeMaterial(greenMat);
+                StartCoroutine("ChangeColor", greenMat);
                 StartCoroutine("FillFull");
             }
         }
@@ -88,12 +88,23 @@ public class SecondaryMix : MonoBehaviour
 
         IEnumerator FillFull() 
     {
-        Debug.Log(LiquidParent.transform.localScale.y);
         for (float y = LiquidParent.transform.localScale.y; y <=.65f; y+=.01f) 
         {
             LiquidParent.transform.localScale += new Vector3(0, .01f, 0);
             yield return null;
         }
         yield break;
+    }
+
+     IEnumerator ChangeColor(Material mat)
+    {
+        float elapsedTime = 0;
+        Material start = fLiquid.GetComponent<Renderer>().material;
+        while (elapsedTime < 100)
+        {
+            fLiquid.GetComponent<Renderer>().material.Lerp(start, mat, (elapsedTime / 100));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
     }
 }
