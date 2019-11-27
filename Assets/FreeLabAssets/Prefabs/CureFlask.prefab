@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4728973355736244}
   m_Layer: 0
-  m_Name: SecondaryFlask
+  m_Name: CureFlask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 392865750ec844e4f9851a08bc5cc05c, type: 2}
+  - {fileID: 2100000, guid: 8ed292590274d450db67c3e3fae5bb16, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4939,9 +4939,9 @@ GameObject:
   - component: {fileID: 3253512870213770691}
   - component: {fileID: 6987722208985476458}
   - component: {fileID: 3349491620354814339}
-  - component: {fileID: 5596951297345969125}
+  - component: {fileID: 1706388388358506053}
   m_Layer: 11
-  m_Name: SecondaryFlask
+  m_Name: CureFlask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5037,7 +5037,7 @@ MonoBehaviour:
   particleEffect: {fileID: 8153069623342161420}
   interactableParent: {fileID: 657217886571467809}
   liquid: {fileID: 5638809447013577118}
---- !u!65 &5596951297345969125
+--- !u!65 &1706388388358506053
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

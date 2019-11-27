@@ -72,6 +72,7 @@ public class SecondaryMix : MonoBehaviour
     }
 
     void ChangeMaterial(Material mat){
+        fLiquid.SetActive(true);
         fLiquid.GetComponent<Renderer>().material = mat;
         ParticleEffect.GetComponent<Renderer>().material = mat;
     }
@@ -100,9 +101,10 @@ public class SecondaryMix : MonoBehaviour
     {
         float elapsedTime = 0;
         Material start = fLiquid.GetComponent<Renderer>().material;
-        while (elapsedTime < 100)
+        ParticleEffect.GetComponent<Renderer>().material = mat;
+        while (elapsedTime < 50)
         {
-            fLiquid.GetComponent<Renderer>().material.Lerp(start, mat, (elapsedTime / 100));
+            fLiquid.GetComponent<Renderer>().material.Lerp(start, mat, (elapsedTime / 50));
             elapsedTime += Time.deltaTime;
             yield return null;
         }

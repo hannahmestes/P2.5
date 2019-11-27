@@ -4904,6 +4904,7 @@ GameObject:
   - component: {fileID: 1956093986445460008}
   - component: {fileID: 6242387990902068885}
   - component: {fileID: 6072798647506738295}
+  - component: {fileID: 2204957480039998979}
   m_Layer: 11
   m_Name: PurpleFlask
   m_TagString: Untagged
@@ -5000,6 +5001,19 @@ CapsuleCollider:
   m_Height: 0.25495017
   m_Direction: 1
   m_Center: {x: 0, y: -0.000000007450581, z: 0}
+--- !u!65 &2204957480039998979
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8411853951841094283}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1099436, y: 0.009774566, z: 0.12022478}
+  m_Center: {x: 0.00032613426, y: -0.1225878, z: 0.0012164116}
 --- !u!1001 &2650302713483197510
 PrefabInstance:
   m_ObjectHideFlags: 0

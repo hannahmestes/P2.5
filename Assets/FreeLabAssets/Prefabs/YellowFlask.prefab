@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 2001792009485777606}
   - component: {fileID: 9008853986730828180}
   - component: {fileID: 48075513362495731}
+  - component: {fileID: 1140471040655092247}
   m_Layer: 11
   m_Name: YellowFlask
   m_TagString: Untagged
@@ -140,6 +141,19 @@ CapsuleCollider:
   m_Height: 0.25495017
   m_Direction: 1
   m_Center: {x: 0, y: -0.000000007450581, z: 0}
+--- !u!65 &1140471040655092247
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777894902154543200}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1099436, y: 0.009774566, z: 0.12022478}
+  m_Center: {x: 0.00032613426, y: -0.1225878, z: 0.0012164116}
 --- !u!1 &3310861862369385085
 GameObject:
   m_ObjectHideFlags: 0
