@@ -54,3 +54,15 @@ Escape Room game for CS3365
 * Add sound and other details
 * Add menu screen
 * User testing
+
+## Demo link
+
+
+## Task description
+* There are three components available in purple, green and orange colors
+* The user's task is to create a mixture of purple, green, and orange color components
+
+## Hypothesis
+* The three color components are available in the Escape Room 
+* We ask the user to create a mixture of three colors
+* We explain the controls and user will be able to figure it out without any extra assistance
