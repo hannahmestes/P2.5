@@ -56,13 +56,13 @@ Escape Room game for CS3365
 * User testing
 
 ## Demo link
-
+[Link](https://youtu.be/PNY4jpVfhyI)
 
 ## Task description
-* There are three components available in purple, green and orange colors
-* The user's task is to create a mixture of purple, green, and orange color components
+* There are three glass tubes available with purple, green and orange colored components(liquids)
+* The user's task is to create a mixture of the three colored components
 
 ## Hypothesis
-* The three color components are available in the Escape Room 
-* We ask the user to create a mixture of three colors
+* The three color components are available in glass tubes on a table in the Escape Room 
+* We ask the user to create a mixture of the three colored components
 * We explain the controls and user will be able to figure it out without any extra assistance
