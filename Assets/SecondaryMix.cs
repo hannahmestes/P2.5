@@ -43,7 +43,7 @@ public class SecondaryMix : MonoBehaviour
             }
             StartCoroutine("FillHalf");
         }
-        else if(LiquidParent.transform.localScale.y<=1){
+        else if(LiquidParent.transform.localScale.y<=.6){
             if(other.GetComponent<Renderer>().material.name.Contains(blueMat.name) && currentMat == 2){
                 StartCoroutine("ChangeColor", purpleMat);
                 StartCoroutine("FillFull");

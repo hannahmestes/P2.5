@@ -45,7 +45,7 @@ CapsuleCollider:
   m_Height: 0.055235326
   m_Direction: 1
   m_Center: {x: 0, y: 0.044001967, z: 0}
---- !u!114 &2360739522995841012
+--- !u!114 &280278387511711142
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,15 +54,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 657217886571467809}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670460a14954d4eb098a78ea5ed65a79, type: 3}
+  m_Script: {fileID: 11500000, guid: 910f21e90776d4cb791f6d610fde2648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   purpleMat: {fileID: 2100000, guid: 650097ce85c9840e9a60f9bc2b9ed0bd, type: 2}
   orangeMat: {fileID: 2100000, guid: 7cd707a9e27f0421492c1b06b420000d, type: 2}
   greenMat: {fileID: 2100000, guid: 8c8d5f7a2bc3c4622a9aa9d96a6df9f1, type: 2}
-  redMat: {fileID: 2100000, guid: 2e6a4cc4635ae462b82a2a76736c5156, type: 2}
-  blueMat: {fileID: 2100000, guid: 41d4773f341eb47169ca31a208c3b281, type: 2}
-  yellowMat: {fileID: 2100000, guid: d1851dd002d364e81bfea2fa01081aa9, type: 2}
+  partialMat: {fileID: 2100000, guid: 7b2acc35e0c1c4c5dbf32ccb8ff645cd, type: 2}
+  CureMat: {fileID: 2100000, guid: 8ed292590274d450db67c3e3fae5bb16, type: 2}
   fLiquid: {fileID: 2043976937664411814}
   LiquidParent: {fileID: 5638809447013577118}
   ParticleEffect: {fileID: 3125087166495283175}
@@ -4956,7 +4955,7 @@ Transform:
   m_GameObject: {fileID: 6906288049653475223}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 0.7, z: 2.5}
   m_Children:
   - {fileID: 5094898707225176489}
   - {fileID: 57000596971312412}
