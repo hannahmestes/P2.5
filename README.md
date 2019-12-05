@@ -100,13 +100,12 @@ _-V_
 * Formula Sheet: This will be taped on the inside of the door to the cabinet where the supplies to make the cure are found.
 
 Project Olympus
-Designation: <div class="text-orange">O</div><div class="text-purple">P</div><div class="text-green">G</div>-3862
+Designation: + Green OPG-3862
 
 Trial #437:
-
-<div class="text-red">R</div><div class="text-yellow">Y</div> <br/>
-<div class="text-red">R</div><div class="text-blue">B</div> <br/>
-<div class="text-yellow">Y</div><div class="text-blue">B</div> <br/>
+RY <br/>
+RB <br/>
+YB
 
 
 ### Citations
