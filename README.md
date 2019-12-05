@@ -70,8 +70,7 @@ Escape Room game for CS3365
 ### Final Demo Link
 [Link]()
 
-### Final implementation
-Game components:
+### Game components
 
 * Radio Broadcast: This message will play shortly after the player begins the game
 
