@@ -99,7 +99,7 @@ _-V_
 
 * Formula Sheet: This will be taped on the inside of the door to the cabinet where the supplies to make the cure are found.
 
-Project Olympus
+Project Olympus <br/>
 Designation: OPG-**3862**
 
 Trial #437:<br/>
