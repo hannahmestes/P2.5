@@ -76,7 +76,9 @@ Game components:
 * Radio Broadcast: This message will play shortly after the player begins the game
 
 ...To any survivors receiving this broadcast: we are transmitting from a military installation near Lake Athena, 15 miles northeast of the city. All survivors in the area are advised to proceed to this location. We have food, medical supplies, and munitions. When traveling, stay off major highways. Steer clear of urban centers. Avoid the infected at all costs. Avoid all physical contact with the deceased. Infection is rapidly transmitted and, by all accounts, untreatable...
+
 ...Be advised that, due to the scale of the threat, a large-scale airstrike on the metropolitan area is imminent. All those remaining in the city must evacuate immediately. Repeat: all citizens must evacuate immediately... 
+
 
 * Letter to the Player: This will be found on top of a corpse near where the player starts.
 
@@ -94,9 +96,10 @@ _Tell Persephone I’m sorry._
 
 _-V_
 
+
 * Formula Sheet: This will be taped on the inside of the door to the cabinet where the supplies to make the cure are found.
 
-                                                          Project Olympus
+Project Olympus
 Designation: <font color="orange">O</font><font color="purple">P</font><font color="green">G</font>-3862
 
 Trial #437:
