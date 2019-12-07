@@ -13,46 +13,46 @@ public class PauseMenuLogic : MonoBehaviour
     public Transform pauseLocation;
     public Transform gameLocation;
 
-    protected bool inPauseMenu = false;
-
     public List<GameObject> pauseItems;
     public List<GameObject> gameItems;
 
-    public GameObject teleportationRelease;
-    public GameObject teleportationPress;
-    public void SwitchRooms() {
-        TransformData teleportDestination = new TransformData(gameLocation);
-        if (!inPauseMenu) {
-            gameLocation.position = new Vector3(headOrientation.position.x, playArea.position.y, headOrientation.position.z);
+    // public GameObject teleportationRelease;
 
-            Vector3 right = Vector3.Cross(playArea.up, headOrientation.forward);
-            Vector3 forward = Vector3.Cross(right, playArea.up);
+    // public GameObject teleportationPress;
 
-            gameLocation.rotation = Quaternion.LookRotation(forward, playArea.up);
-
-            teleportDestination = new TransformData(pauseLocation);
-        }
-
-        teleporter.Teleport(teleportDestination);
-        inPauseMenu = !inPauseMenu;
-
+    public void Start(){
         foreach (GameObject item in pauseItems) {
-            item.SetActive(inPauseMenu);
+            item.SetActive(true);
         }
 
         foreach (GameObject item in gameItems) {
-            item.SetActive(!inPauseMenu);
+            item.SetActive(false);
         }
     }
-    public void ResetGame() {
-        SceneManager.LoadScene("Final", LoadSceneMode.Single);
+
+    public void StartGame() {
+        TransformData teleportDestination = new TransformData(gameLocation);
+        teleporter.Teleport(teleportDestination);
+
+        foreach (GameObject item in pauseItems) {
+            item.SetActive(false);
+        }
+
+        foreach (GameObject item in gameItems) {
+            item.SetActive(true);
+        }
     }
 
-    public void SwitchTeleportationToPress(bool value) {
-        teleportationRelease.SetActive(!value);
-        teleportationPress.SetActive(value);
-    }
-    public void SwitchTeleportationToRelease(bool value) {
-        SwitchTeleportationToPress(!value);
+    public void ResetGame() {
+        TransformData teleportDestination = new TransformData(pauseLocation);
+        teleporter.Teleport(teleportDestination);
+
+        foreach (GameObject item in pauseItems) {
+            item.SetActive(true);
+        }
+
+        foreach (GameObject item in gameItems) {
+            item.SetActive(false);
+        }
     }
 }

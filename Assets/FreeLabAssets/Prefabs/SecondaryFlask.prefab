@@ -131,6 +131,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4860,6 +4861,7 @@ ParticleSystemRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4938,7 +4940,6 @@ GameObject:
   - component: {fileID: 6804782788016211937}
   - component: {fileID: 3253512870213770691}
   - component: {fileID: 6987722208985476458}
-  - component: {fileID: 3349491620354814339}
   - component: {fileID: 5596951297345969125}
   m_Layer: 11
   m_Name: SecondaryFlask
@@ -4996,6 +4997,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -5022,21 +5024,6 @@ CapsuleCollider:
   m_Height: 0.28202927
   m_Direction: 1
   m_Center: {x: 0, y: 0.013539553, z: 0}
---- !u!114 &3349491620354814339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6906288049653475223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3f402d18ef754be38453c1f82e9afb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particleEffect: {fileID: 8153069623342161420}
-  interactableParent: {fileID: 657217886571467809}
-  liquid: {fileID: 5638809447013577118}
 --- !u!65 &5596951297345969125
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5048,8 +5035,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1099436, y: 0.009774566, z: 0.12022478}
-  m_Center: {x: 0.00032613426, y: -0.1225878, z: 0.0012164116}
+  m_Size: {x: 0.08, y: 0.009774566, z: 0.08}
+  m_Center: {x: 0, y: -0.1225878, z: 0}
 --- !u!1001 &7262016913312030157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5057,11 +5044,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4728973355736244}
     m_Modifications:
-    - target: {fileID: 7915416951780248044, guid: 240fdd985e025cb459f73d2b1bb7b341,
-        type: 3}
-      propertyPath: m_Name
-      value: Interactable
-      objectReference: {fileID: 0}
     - target: {fileID: 2597149656536317179, guid: 240fdd985e025cb459f73d2b1bb7b341,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5121,6 +5103,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915416951780248044, guid: 240fdd985e025cb459f73d2b1bb7b341,
+        type: 3}
+      propertyPath: m_Name
+      value: Interactable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 240fdd985e025cb459f73d2b1bb7b341, type: 3}

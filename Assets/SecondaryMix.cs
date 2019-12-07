@@ -21,10 +21,21 @@ public class SecondaryMix : MonoBehaviour
         currentMat = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Update(){
+        if(gameObject.transform.rotation.z > .69 || 
+        gameObject.transform.rotation.z < -.69 ||
+        gameObject.transform.rotation.x > .69 ||
+        gameObject.transform.rotation.x < -.69){
+            ParticleEffect.GetComponent<ParticleSystem>().Play(true);
+            LiquidParent.transform.localScale += new Vector3(0, -.01f, 0);
+            if(LiquidParent.transform.localScale.y <= 0){
+                fLiquid.SetActive(false);
+                this.currentMat = 0;
+            }
+        }
+        else{
+            ParticleEffect.GetComponent<ParticleSystem>().Stop(true);
+        }
     }
 
     private void OnParticleCollision(GameObject other){

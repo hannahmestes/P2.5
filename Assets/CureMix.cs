@@ -22,12 +22,6 @@ public class CureMix : MonoBehaviour
         mat2 = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnParticleCollision(GameObject other){
         if(mat1 == 0){
             if(other.GetComponent<Renderer>().material.name.Contains(purpleMat.name)){
@@ -95,7 +89,7 @@ public class CureMix : MonoBehaviour
 
     IEnumerator FillTwoThird() 
     {
-        for (float y = LiquidParent.transform.localScale.y; y <=.3f; y+=.01f) 
+        for (float y = LiquidParent.transform.localScale.y; y <=.6f; y+=.01f) 
         {
             LiquidParent.transform.localScale += new Vector3(0, .01f, 0);
             yield return null;
@@ -105,7 +99,7 @@ public class CureMix : MonoBehaviour
 
         IEnumerator FillFull() 
     {
-        for (float y = LiquidParent.transform.localScale.y; y <=.4f; y+=.01f) 
+        for (float y = LiquidParent.transform.localScale.y; y <=.75f; y+=.01f) 
         {
             LiquidParent.transform.localScale += new Vector3(0, .01f, 0);
             yield return null;
