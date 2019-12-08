@@ -1,6 +1,8 @@
 # EscapeRoom
 Escape Room game for CS3365
-<iframe src="https://giphy.com/embed/ZYVHIpQoUfC8dSybMu" width="500" height="500" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ZYVHIpQoUfC8dSybMu">via GIPHY</a></p>
+
+![alt text](https://giphy.com/embed/ZYVHIpQoUfC8dSybMu "GIF of App")
+
 
 ## Members & Responsibilities:
 
