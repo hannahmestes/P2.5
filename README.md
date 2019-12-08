@@ -72,7 +72,7 @@ Escape Room game for CS3365
 
 ## Final Project Report
 
-**insert screenshot: title screen**
+![alt text](https://github.com/hannahmestes/EscapeRoom/blob/master/Menu.png?raw=true "Title Screen")
 
 This project is a VR Escape Room game, in which we take the standard escape room experience and translate it into VR. Our goal was to take a game concept that the average player might be familiar with, then make a major change to the way the player would interact with that game. We knew early on that we wanted the new kind of interaction to come from VR, which provides great opportunities for immersion and immediacy, and quickly realized that an escape room was quite well suited to the medium.
 
@@ -80,20 +80,21 @@ In a traditional escape room game, the player clicks around a room in an attempt
 
 Furthermore, while the traditional escape room involves locating interactive objects in a 2D space, our VR implementation creates a 3D interactive environment. Instead of just scanning around and clicking with a mouse to trigger events, the player can actually move through the space, pick up objects, and physically interact with them. Rather than simply click on a key and click on a lock, the player can grab the key, unlock the door, and open it. However, what we realized was that, with this level of freedom of movement and interactivity, it would be very easy to get carried away with placing tons of objects and puzzles in the game world. Because of this, we decided to keep the scope of the game small, limit ourselves to a few key puzzles, and focus on having the player solve something unique to the VR experience.
 
-**insert 2 screenshots: overhead view of game world, first view of player upon starting**
+![alt text](https://github.com/hannahmestes/EscapeRoom/blob/master/SceneMap.png?raw=true "SceneMap")
+![alt text](https://github.com/hannahmestes/EscapeRoom/blob/master/PlayerSart.png?raw=true "UserView")
 
 
 To that end, the full route of the VR game is as follows: the player enters a morgue in which there is a body on a table in front of them; a note on top of the body makes the player aware of an infection which, presumably, both the player and the dead person (known as “V”) were attempting to cure. At this point, the player is infected and has 5 minutes to make the cure and escape, and will see a timer indicating their remaining time. The note also mentions someone “Persephone,” who the player might presume is V’s wife, and on a nearby table is a picture frame with a picture of V’s family. Near the picture is a key which the player can use to unlock a cabinet in the morgue. Inside the cabinet, the player will find the vials that enable them to make the cure, as well as a note which has both the formula for the cure and the door code.
 
-**insert screenshot: looking at open cabinet with tools and note inside**
+![alt text](https://github.com/hannahmestes/EscapeRoom/blob/master/Cabinet.png?raw=true "Cabinet")
 
 At this point, the player can use the door code to exit the room, but if they have not taken the cure, they will die upon exiting. We wanted to include different possible routes for the player to take, such that the game allows some player choice, rather than being entirely on rails. But we also assumed that an average player, upon finding the tools to make the cure, would make use of them—even if only out of curiosity.
 
-**insert screenshot: mixing colors**
+![alt text](https://github.com/hannahmestes/EscapeRoom/blob/master/Mixing.png?raw=true "Mixing Colors")
 
 If the player chooses to make the cure, they must follow the formula sheet by first mixing three secondary colors from the three primary colors, and then mixing those secondary colors in a particular order. We wanted this addition of color at a key stage in the game to make it feel more vibrant, visually engaging, and fun, while still presenting an opportunity for interaction and puzzle solving. This puzzle is the focal point of the game and is intended to highlight the interactive capabilities afforded by a VR experience. The player can physically pick up the vials, pour them, mix them, and even simulate drinking them. The formula sheet is color coded, so the puzzle can be solved by simply following the colors without having to memorize a complex sequence. 
 
-**insert screenshot: view of keypad (can be while interacting)**
+![alt text](https://github.com/hannahmestes/EscapeRoom/blob/master/PinPad.png?raw=true "Keypad")
 
 For a successful run of the game, once the player has made and taken the cure, they will progress to the keypad and unlock the main door with the 4-digit code found on the note from the cabinet. The code is disguised as part of the drug trial designation for the cure, but is underlined to draw the player’s attention. Once the player puts in the code, they can open the door and exit the room, winning the game. If a player knows exactly what to do, a full run can be completed very quickly, but a new player will likely be racing against the clock, and might even have to take a few tries to successfully exit.
 
