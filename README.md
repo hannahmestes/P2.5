@@ -85,7 +85,7 @@ Furthermore, while the traditional escape room involves locating interactive obj
 
 To that end, the full route of the VR game is as follows: the player enters a morgue in which there is a body on a table in front of them; a note on top of the body makes the player aware of an infection which, presumably, both the player and the dead person (known as “V”) were attempting to cure. At this point, the player is infected and has 5 minutes to make the cure and escape, and will see a timer indicating their remaining time. The note also mentions someone “Persephone,” who the player might presume is V’s wife, and on a nearby table is a picture frame with a picture of V’s family. Near the picture is a key which the player can use to unlock a cabinet in the morgue. Inside the cabinet, the player will find the vials that enable them to make the cure, as well as a note which has both the formula for the cure and the door code.
 
-**insert screenshot: looking at open cabinet with tools and note inside>**
+**insert screenshot: looking at open cabinet with tools and note inside**
 
 At this point, the player can use the door code to exit the room, but if they have not taken the cure, they will die upon exiting. We wanted to include different possible routes for the player to take, such that the game allows some player choice, rather than being entirely on rails. But we also assumed that an average player, upon finding the tools to make the cure, would make use of them—even if only out of curiosity.
 
