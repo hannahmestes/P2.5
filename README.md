@@ -1,7 +1,7 @@
 # EscapeRoom
 Escape Room game for CS3365
 
-![alt text](https://media.giphy.com/media/ZYVHIpQoUfC8dSybMu/giphy.gif "GIF of App")
+![alt text](https://github.com/hannahmestes/EscapeRoom/blob/master/gif.gif?raw=true "GIF of App")
 
 
 ## Members & Responsibilities:
