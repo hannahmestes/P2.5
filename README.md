@@ -68,7 +68,7 @@ Escape Room game for CS3365
 * We explain the controls and user will be able to figure it out without any extra assistance
 
 ### Final Demo Link
-[Link]()
+[Link](https://youtu.be/dqQRXxbc524)
 
 ## Final Project Report
 
