@@ -7,9 +7,20 @@ public class openDoors : MonoBehaviour
 
     public Transform lDoor;
     public Transform rDoor;
+    private Quaternion initialL;
+    private Quaternion initialR;
 
+    private void Start(){
+        initialL = lDoor.rotation;
+        initialR = rDoor.rotation;
+    }
     public void Open(){
         StartCoroutine("animateOpen");
+    }
+
+    public void Close(){
+        lDoor.rotation = initialL;
+        rDoor.rotation = initialR;
     }
 
     IEnumerator animateOpen(){

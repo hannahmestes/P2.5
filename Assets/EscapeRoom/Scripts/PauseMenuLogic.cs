@@ -47,6 +47,7 @@ public class PauseMenuLogic : MonoBehaviour
 
     public void ResetGame() {
         TransformData teleportDestination = new TransformData(pauseLocation);
+        Player.Rotate(new Vector3(0, 180, 0), Space.Self);
         teleporter.Teleport(teleportDestination);
 
         foreach (GameObject item in pauseItems) {

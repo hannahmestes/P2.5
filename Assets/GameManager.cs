@@ -1,25 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public SkinnedMeshRenderer lHand;
     public SkinnedMeshRenderer rHand;
     public Material greenHands;
-    public Material Transparent;
     public Material DeadHead;
     public float timeLimit;
     public GameObject HeadBubble;
-    public PauseMenuLogic menu;
     public TextMesh GameOverText;
     public TextMesh TimerText;
     public AudioSource Radio;
+    public ParticleSystem Confetti;
+    public openDoors FrontDoors;
+    public AudioSource Success;
 
     private Material normalHands;
     private bool hasConsumedCure = false;
     private bool timerOn = false;
-    private float Timer;
+    private float Timer;    
 
     void Start(){
         normalHands = lHand.material;
@@ -47,7 +49,7 @@ public class GameManager : MonoBehaviour
     {
         Timer = timeLimit;
         timerOn = true;
-        StartCoroutine(turnHands(greenHands, 1000*timeLimit));
+        StartCoroutine(turnHands(greenHands, 100*timeLimit));
     }
     
     public void StartAudio()
@@ -57,27 +59,24 @@ public class GameManager : MonoBehaviour
 
     void timerEnded()
     {
-        HeadBubble.SetActive(true);
-        StartCoroutine("TurnHead", DeadHead);
+        GameOverText.text = "Game Over";
+        StartCoroutine("Lose");
         StopCoroutine("turnHands");
-        StartCoroutine("gameOver");
-        lHand.gameObject.SetActive(false);
-        rHand.gameObject.SetActive(false);
     }
 
     void resetEverything(){
-        if(Radio.isPlaying) Radio.Stop();
-        StartCoroutine(turnHands(normalHands, 1f));
-        lHand.gameObject.SetActive(true);
-        rHand.gameObject.SetActive(true);
-        GameOverText.color = new Color(255,255,255,0);
-        HeadBubble.GetComponent<Renderer>().material = Transparent;
-        HeadBubble.SetActive(false);
-        Timer = timeLimit;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public bool canExit(){
-        return hasConsumedCure;
+    public void doorOpened(){
+        if(hasConsumedCure){
+            FrontDoors.Open();
+            StartCoroutine("Win");
+        }
+        else{
+            GameOverText.text = "You are infected \n Game over";
+            StartCoroutine("Lose");      
+        }
     }
 
     public void TakeCure(){
@@ -85,6 +84,13 @@ public class GameManager : MonoBehaviour
         timerOn = false;
         StopCoroutine("turnHands");
         StartCoroutine(turnHands(normalHands, 50f));
+    }
+
+    private IEnumerator Win(){
+        Success.Play();
+        Confetti.Play();
+        yield return new WaitForSeconds(5);
+        resetEverything();
     }
 
     public IEnumerator turnHands(Material color, float duration){
@@ -100,20 +106,21 @@ public class GameManager : MonoBehaviour
         yield break;
     }
 
-    public IEnumerator TurnHead(Material color){
+    public IEnumerator Lose(){
+        lHand.gameObject.SetActive(false);
+        rHand.gameObject.SetActive(false);
         Material start = HeadBubble.GetComponent<Renderer>().material;
         float elapsedTime = 0;
-        int duration = 500;
+        int duration = 5;
         while (elapsedTime < duration)
         {
             HeadBubble.GetComponent<Renderer>().enabled = true;
-            HeadBubble.GetComponent<Renderer>().material.Lerp(start, color, (elapsedTime / duration));
+            HeadBubble.GetComponent<Renderer>().material.Lerp(start, DeadHead, (elapsedTime / (10*duration)));
             GameOverText.color = new Color(255,255,255, (elapsedTime*255/duration));
             elapsedTime += Time.deltaTime;
             yield return null;
         }
         resetEverything();
-        menu.ResetGame();
         yield break;
     }
 
