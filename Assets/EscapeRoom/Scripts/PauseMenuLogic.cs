@@ -13,12 +13,11 @@ public class PauseMenuLogic : MonoBehaviour
     public Transform pauseLocation;
     public Transform gameLocation;
 
+    public Transform Player;
+    public GameManager GameManager;
+
     public List<GameObject> pauseItems;
     public List<GameObject> gameItems;
-
-    // public GameObject teleportationRelease;
-
-    // public GameObject teleportationPress;
 
     public void Start(){
         foreach (GameObject item in pauseItems) {
@@ -32,6 +31,7 @@ public class PauseMenuLogic : MonoBehaviour
 
     public void StartGame() {
         TransformData teleportDestination = new TransformData(gameLocation);
+        Player.Rotate(new Vector3(0, 180, 0), Space.Self);
         teleporter.Teleport(teleportDestination);
 
         foreach (GameObject item in pauseItems) {
@@ -41,6 +41,8 @@ public class PauseMenuLogic : MonoBehaviour
         foreach (GameObject item in gameItems) {
             item.SetActive(true);
         }
+
+        GameManager.StartAudio();
     }
 
     public void ResetGame() {

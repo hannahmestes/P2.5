@@ -26,11 +26,14 @@ public class SecondaryMix : MonoBehaviour
         gameObject.transform.rotation.z < -.69 ||
         gameObject.transform.rotation.x > .69 ||
         gameObject.transform.rotation.x < -.69){
-            ParticleEffect.GetComponent<ParticleSystem>().Play(true);
-            LiquidParent.transform.localScale += new Vector3(0, -.01f, 0);
+            LiquidParent.transform.localScale -= new Vector3(0, .01f, 0);
             if(LiquidParent.transform.localScale.y <= 0){
                 fLiquid.SetActive(false);
+                ParticleEffect.SetActive(false);
                 this.currentMat = 0;
+            }
+            else{
+                ParticleEffect.GetComponent<ParticleSystem>().Play(true);
             }
         }
         else{
@@ -39,6 +42,7 @@ public class SecondaryMix : MonoBehaviour
     }
 
     private void OnParticleCollision(GameObject other){
+        ParticleEffect.SetActive(true);
         if(currentMat == 0){
             if(other.GetComponent<Renderer>().material.name.Contains(blueMat.name)){
                 ChangeMaterial(blueMat);
@@ -90,7 +94,7 @@ public class SecondaryMix : MonoBehaviour
 
     IEnumerator FillHalf() 
     {
-        for (float y = LiquidParent.transform.localScale.y; y <=.5f; y+=.01f) 
+        while (LiquidParent.transform.localScale.y <=.5f)
         {
             LiquidParent.transform.localScale += new Vector3(0, .01f, 0);
             yield return null;
@@ -100,7 +104,7 @@ public class SecondaryMix : MonoBehaviour
 
         IEnumerator FillFull() 
     {
-        for (float y = LiquidParent.transform.localScale.y; y <=.65f; y+=.01f) 
+        while (LiquidParent.transform.localScale.y <=1f) 
         {
             LiquidParent.transform.localScale += new Vector3(0, .01f, 0);
             yield return null;
@@ -119,5 +123,6 @@ public class SecondaryMix : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        yield break;
     }
 }

@@ -1,47 +1,60 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    private bool hasConsumedCure = false;
-    private Material normalHands;
     public SkinnedMeshRenderer lHand;
     public SkinnedMeshRenderer rHand;
     public Material greenHands;
-    public Material cureMat;
-    public GameObject HeadBubble;
     public Material Transparent;
     public Material DeadHead;
-    public float timeLimit = 300.0f;
+    public float timeLimit;
+    public GameObject HeadBubble;
     public PauseMenuLogic menu;
-    private bool timerOn = false;
-    public Material GameOverText;
+    public TextMesh GameOverText;
+    public TextMesh TimerText;
+    public AudioSource Radio;
 
+    private Material normalHands;
+    private bool hasConsumedCure = false;
+    private bool timerOn = false;
+    private float Timer;
 
     void Start(){
         normalHands = lHand.material;
     }
 
-    void DisableEverything(){
-
-    }
-
-    void StartTimer()
+    void Update()
     {
-        StartCoroutine(turnHands(greenHands, 100*timeLimit));
-        timerOn = true;
-    }
- 
-    void Update(){
-    if (timerOn) timeLimit -= Time.deltaTime;
-        if (timeLimit <= 0.0f)
-        {
-            timerEnded();
+        if (timerOn) {
+            Timer -= Time.deltaTime;
+           
+            if(Timer <= 0){
+                timerOn = false;
+                timerEnded();
+                TimerText.text = "00:00";
+            }
+            float m = Timer % 3600;
+            string minutes = ((int)m / 60).ToString("00");
+            string seconds = (m % 60).ToString("00");
+
+            TimerText.text = minutes + ":" + seconds;
         }
     }
+
+    public void StartTimer()
+    {
+        Timer = timeLimit;
+        timerOn = true;
+        StartCoroutine(turnHands(greenHands, 1000*timeLimit));
+    }
     
+    public void StartAudio()
+    {
+        Radio.Play();
+    }
+
     void timerEnded()
     {
         HeadBubble.SetActive(true);
@@ -50,44 +63,28 @@ public class GameManager : MonoBehaviour
         StartCoroutine("gameOver");
         lHand.gameObject.SetActive(false);
         rHand.gameObject.SetActive(false);
-        // move player to start
     }
 
     void resetEverything(){
-        lHand.material = normalHands;
-        rHand.material = normalHands;
+        if(Radio.isPlaying) Radio.Stop();
+        StartCoroutine(turnHands(normalHands, 1f));
         lHand.gameObject.SetActive(true);
         rHand.gameObject.SetActive(true);
-        GameOverText.SetFloat(ShaderUtilities.ID_FaceDilate, -1);
+        GameOverText.color = new Color(255,255,255,0);
         HeadBubble.GetComponent<Renderer>().material = Transparent;
         HeadBubble.SetActive(false);
+        Timer = timeLimit;
     }
 
     public bool canExit(){
         return hasConsumedCure;
     }
 
-    private void OnParticleCollision(GameObject other){
-        if(other.GetComponent<Renderer>().material.name.Contains(cureMat.name)){
-                hasConsumedCure = true;
-                timerOn = false;
-                StopCoroutine("turnHands");
-                StartCoroutine(turnHands(normalHands, 50f));
-         }
-    }
-
-    
-
-    public IEnumerator gameOver(){
-        float duration = 5;
-        float elapsedTime = 0;
-        while (elapsedTime < duration)
-        {
-            GameOverText.SetFloat(ShaderUtilities.ID_FaceDilate, (elapsedTime/duration)-1);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        yield break;
+    public void TakeCure(){
+        hasConsumedCure = true;
+        timerOn = false;
+        StopCoroutine("turnHands");
+        StartCoroutine(turnHands(normalHands, 50f));
     }
 
     public IEnumerator turnHands(Material color, float duration){
@@ -109,11 +106,19 @@ public class GameManager : MonoBehaviour
         int duration = 500;
         while (elapsedTime < duration)
         {
+            HeadBubble.GetComponent<Renderer>().enabled = true;
             HeadBubble.GetComponent<Renderer>().material.Lerp(start, color, (elapsedTime / duration));
+            GameOverText.color = new Color(255,255,255, (elapsedTime*255/duration));
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        resetEverything();
+        menu.ResetGame();
         yield break;
+    }
+
+    public bool TimerOn(){
+        return timerOn;
     }
 
 }

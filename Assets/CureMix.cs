@@ -79,7 +79,7 @@ public class CureMix : MonoBehaviour
 
     IEnumerator FillThird() 
     {
-        for (float y = LiquidParent.transform.localScale.y; y <=.3f; y+=.01f) 
+        while (LiquidParent.transform.localScale.y <=.3f) 
         {
             LiquidParent.transform.localScale += new Vector3(0, .01f, 0);
             yield return null;
@@ -89,7 +89,7 @@ public class CureMix : MonoBehaviour
 
     IEnumerator FillTwoThird() 
     {
-        for (float y = LiquidParent.transform.localScale.y; y <=.6f; y+=.01f) 
+        while (LiquidParent.transform.localScale.y <=.6f) 
         {
             LiquidParent.transform.localScale += new Vector3(0, .01f, 0);
             yield return null;
@@ -99,7 +99,7 @@ public class CureMix : MonoBehaviour
 
         IEnumerator FillFull() 
     {
-        for (float y = LiquidParent.transform.localScale.y; y <=.75f; y+=.01f) 
+        while (LiquidParent.transform.localScale.y <=1f)  
         {
             LiquidParent.transform.localScale += new Vector3(0, .01f, 0);
             yield return null;
